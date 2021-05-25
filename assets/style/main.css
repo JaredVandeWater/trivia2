@@ -10696,3 +10696,25 @@ main {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+ .my-logo {
+    letter-spacing: .2rem;
+    font-size: 61px;
+    color: #dda1ff;
+    font-family: Arial Black, Gadget, sans-serif;
+    text-shadow: 0px 0px 0 rgb(214,154,248),
+                 0px 1px 0 rgb(207,147,241),
+                 0px 2px 0 rgb(200,140,234),
+                 0px 3px 0 rgb(193,133,227),
+                 0px 4px 0 rgb(186,126,220),
+                 0px 5px 0 rgb(178,118,212),
+                 0px 6px 0 rgb(171,111,205),
+                 0px 7px 0 rgb(164,104,198),
+                 0px 8px 0 rgb(157,97,191),
+                 0px 9px 0 rgb(150,90,184),
+                 0px 10px  0 rgb(143,83,177),
+                 0px 11px 10px rgba(25,84,0,0.6),
+                 0px 11px 1px rgba(25,84,0,0.5),
+                 0px 0px 10px rgba(25,84,0,.2);
+ }

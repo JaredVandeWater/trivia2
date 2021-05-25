@@ -3,7 +3,11 @@ import { triviaCardsService } from "../Services/TriviaCardsService.js";
 
 function _draw(){
     let template = ''
-    template = ProxyState.currentCard.template
+    if (ProxyState.currentCard!='results'){
+        template = ProxyState.currentCard?.cardTemplate
+    }else{template = currentCard.resultsTemplate}
+
+
     document.getElementById('app').innerHTML = template
 
 }
@@ -11,10 +15,8 @@ function _draw(){
 
 export class TriviaCardsController{
     constructor(){
-        ProxyState.on('currentCard', _draw)
         this.getAllCards()
-        this.setActiveCard()
-        _draw()
+        ProxyState.on('currentCard', _draw)
     }
 
     async getAllCards(){
@@ -27,5 +29,9 @@ export class TriviaCardsController{
 
     setActiveCard(){
         triviaCardsService.setActiveCard()
+    }
+
+    selectAnswer(answer, button){
+        triviaCardsService.selectAnswer(answer, button)
     }
 }
