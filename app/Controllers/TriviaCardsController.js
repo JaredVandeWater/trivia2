@@ -3,9 +3,9 @@ import { triviaCardsService } from "../Services/TriviaCardsService.js";
 
 function _draw(){
     let template = ''
-    if (ProxyState.currentCard!='results'){
+    if (ProxyState.isQuizDone === false){
         template = ProxyState.currentCard?.cardTemplate
-    }else{template = currentCard.resultsTemplate}
+    }else{template = ProxyState.currentCard.resultsTemplate}
 
 
     document.getElementById('app').innerHTML = template

@@ -7,6 +7,7 @@ class AppState extends EventEmitter {
   triviaCards = []
   currentCard = null
   currentCardNumber = 0
+  isQuizDone = false
 }
 
 export const ProxyState = new Proxy(new AppState(), {

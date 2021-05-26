@@ -1,4 +1,3 @@
-import { ProxyState } from "../AppState.js"
 import { shuffle } from "../Utils/ShuffleArr.js"
 
 export class TriviaCard{
@@ -48,7 +47,6 @@ get resultsTemplate(){
   <div class="d-flex justify-content-center">
   <h2>Results</h2>
   <ul class="list-group list-group-flush">
-  
   `
 
     

@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js"
+import { ResultsCard } from "../Models/ResultsCard.js"
 import { TriviaCard } from "../Models/TriviaCards.js"
 
 class TriviaCardsService{
@@ -12,7 +13,7 @@ class TriviaCardsService{
 
     setActiveCard(){
         
-            ProxyState.currentCard = ProxyState.triviaCards[ProxyState.currentCardNumber == ProxyState.triviaCards.length  ? ProxyState.currentCard-=1  : ProxyState.currentCardNumber ]
+        ProxyState.currentCard = ProxyState.triviaCards[ProxyState.currentCardNumber]
         
     }
 
@@ -23,9 +24,12 @@ class TriviaCardsService{
             console.log('WRONG');
         }
         if (ProxyState.currentCardNumber<ProxyState.triviaCards.length){
-            this.setActiveCard()
             ProxyState.currentCardNumber++
-        }else {ProxyState.currentCard = 'results'}
+            this.setActiveCard()
+        }
+        if(ProxyState.currentCardNumber === ProxyState.triviaCards.length) {
+        ProxyState.isQuizDone = true
+        ProxyState.currentCard = new ResultsCard()}
         console.log(ProxyState.currentCardNumber);
         console.log(ProxyState.currentCard);
     }
